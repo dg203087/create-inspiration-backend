@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_02_031348) do
+ActiveRecord::Schema.define(version: 2020_06_03_011226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,19 @@ ActiveRecord::Schema.define(version: 2020_06_02_031348) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "quotes", force: :cascade do |t|
+    t.bigint "adjective_id", null: false
+    t.bigint "noun_id", null: false
+    t.bigint "verb_id", null: false
+    t.bigint "template_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["adjective_id"], name: "index_quotes_on_adjective_id"
+    t.index ["noun_id"], name: "index_quotes_on_noun_id"
+    t.index ["template_id"], name: "index_quotes_on_template_id"
+    t.index ["verb_id"], name: "index_quotes_on_verb_id"
+  end
+
   create_table "templates", force: :cascade do |t|
     t.string "content"
     t.datetime "created_at", precision: 6, null: false
@@ -39,4 +52,8 @@ ActiveRecord::Schema.define(version: 2020_06_02_031348) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "quotes", "adjectives"
+  add_foreign_key "quotes", "nouns"
+  add_foreign_key "quotes", "templates"
+  add_foreign_key "quotes", "verbs"
 end
