@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   
   namespace :api do
     namespace :v1 do
-      resources :adjectives, only: [:index]
-      resources :nouns, only: [:index]
-      resources :verbs, only: [:index]
-      resources :templates, only: [:index]
+      resources :adjectives, only: [:index, :create]
+      resources :nouns, only: [:index, :create]
+      resources :verbs, only: [:index, :create]
+      resources :templates, only: [:index, :create]
     end
   end
 
