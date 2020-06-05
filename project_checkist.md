@@ -4,8 +4,6 @@ The JavaScript Project repo has a handful of helpful [READMEs](https://github.co
 
 The application we will create during the project build series is a "Syllabus Sharing App" for independent study.
 
- **USER STORY: A user should be able to read and create syllabi based on category**
-
 ## Checklist
 
 ### PART 1: Planning and Building a Rails API
@@ -35,18 +33,21 @@ The application we will create during the project build series is a "Syllabus Sh
 
 **NOTE**: Remember to _**VERTICALLY**_ build your MVP! This means building out one model/feature at a time. DO NOT build out _all_ the models and controllers at the same time. This is the easiest way to get lost in your project very early. Read more about this [here](https://github.com/learn-co-students/js-spa-project-instructions-online-web-sp-000/blob/master/project-planning-tips.md#build-vertically-not-horizontallys).
 
-- [ ] 8. Build your models: `rails g model <your_model_name> name` (Make sure you capitalize the first letter of the model name!)
+- [x] 8. Build your models: `rails g model <your_model_name> name` (Make sure you capitalize the first letter of the model name!)
     - Migrations
     - Model classes
-    - Associations
-- [ ] 9. Test your models and associations in the console
+    - Associations - belongs to helper method associations indexes variable
+    You would index your associations - performance boost (faster), best practice, especially in large applications
+- [x] 9. Test your models and associations in the console
     - Create some seed data
     - Adjust migrations as needed
 
+syllabus belongs to category
+category has many syllabi
 
 ### PART 2: Routes, Controllers, Serializers
 
-- [ ] 1. Routes
+- [x] 1. Routes
     - Implement _specific_ namespaced routes for _a_ controller **for MVP**
     - REMEMBER! We're _trying_ to build vertically.
 
@@ -63,7 +64,7 @@ The application we will create during the project build series is a "Syllabus Sh
     - Visit `http://localhost:3000/api/v1/<your_resource_name>` to see error
 
 
-- [ ] 2. Controllers
+- [x] 2. Controllers
     - In your console run: `rails g controller api/v1/<your controller_name>` (Make sure you capitalize and the first letter of the controller name!)
     - Build relevant routes for MVP (ex: `index` and `create`)
     - Visit `http://localhost:3000/api/v1/<your_resource_name>` to see JSON data
