@@ -6,11 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Quotes
-temp1 = Template.create(content: "The NOUN VERB s difficulty in every ADJECTIVE opportunity. – Winston Churchill")
-temp2 = Template.create(content: "You learn more from NOUN than from success. Don’t let it VERB You. – Unknown")
-temp3 = Template.create(content: "It’s not whether the NOUN gets VERB ed, It’s if they do it ADJECTIVE ly. – Vince Lombardi")
-temp4 = Template.create(content: "If you are VERB ing something you really care about, you don’t have to be ADJECTIVE ly pushed. The NOUN pulls you. – Steve Jobs")
+# destroy associations after use
+Verb.destroy_all
+Noun.destroy_all
+Adjective.destroy_all
+Template.destroy_all
+Quote.destroy_all
+
+# Templates
+temp1 = Template.create(content: "The NOUN VERBs difficulty in every ADJECTIVE opportunity. – Winston Churchill")
+temp2 = Template.create(content: "You learn more from ADJECTIVE NOUNs than from success. Don’t let it VERB You. – Unknown")
+temp3 = Template.create(content: "It’s not whether the NOUN gets VERBed, it’s if they do it ADJECTIVEly. – Vince Lombardi")
+temp4 = Template.create(content: "If you are VERBing something you really care about, you don’t have to be ADJECTIVEly pushed. The NOUN pulls you. – Steve Jobs")
 
 # Nouns
 actor = Noun.create(noun_word: "actor")
@@ -33,3 +40,5 @@ clean = Adjective.create(adj_word: "clean")
 drab = Adjective.create(adj_word: "drab")
 elegant = Adjective.create(adj_word: "elegant")
 
+# Test Quote
+Quote.create(noun: hang, verb: actor, adjective: adorable, template: temp1)
