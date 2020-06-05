@@ -5,6 +5,7 @@ class Api::V1::AdjectivesController < ApplicationController
     end
     
     def show
+        adjective = Adjective.find(params[:id])
         render json: adjective
     end
 

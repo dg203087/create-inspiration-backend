@@ -5,7 +5,8 @@ class Api::V1::TemplatesController < ApplicationController
     end
 
     def show
-        render json: templates
+        template = Template.find(params[:id])
+        render json: template
     end
 
 end

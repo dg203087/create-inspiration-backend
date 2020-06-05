@@ -5,6 +5,7 @@ class Api::V1::VerbsController < ApplicationController
     end
 
     def show
+        verb = Verb.find(params[:id])
         render json: verb
     end
 

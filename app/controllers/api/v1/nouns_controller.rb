@@ -5,7 +5,8 @@ class Api::V1::NounsController < ApplicationController
     end
 
     def show
-        render json: nouns
+        noun = Noun.find(params[:id])
+        render json: noun
     end
 
     def create
