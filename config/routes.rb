@@ -11,9 +11,10 @@ Rails.application.routes.draw do
       resources :nouns, only: [:index, :create]
       resources :verbs, only: [:index, :create]
       resources :templates, only: [:index, :create]
+      resources :quotes, only: [:index, :create]
     end
   end
 
-  # resources :quotes
+
 
 end
