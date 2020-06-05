@@ -41,4 +41,4 @@ drab = Adjective.create(adj_word: "drab")
 elegant = Adjective.create(adj_word: "elegant")
 
 # Test Quote
-Quote.create(noun: hang, verb: actor, adjective: adorable, template: temp1)
+Quote.create(noun_id: 1, verb_id: 1, adjective_id: 1, template_id: 1)
