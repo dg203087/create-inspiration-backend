@@ -9,8 +9,9 @@
 Verb.destroy_all
 Noun.destroy_all
 Adjective.destroy_all
-Template.destroy_all
 Quote.destroy_all
+Template.destroy_all
+
 
 # Templates
 temp1 = Template.create(content: "The NOUN VERBs difficulty in every ADJECTIVE opportunity. –Winston Churchill", image_url: "https://c0.wallpaperflare.com/preview/181/626/366/feather-filler-poetry-poetic.jpg")
@@ -27,26 +28,31 @@ temp11 = Template.create(content: "Whether you think you can or VERB ADJECTIVE, 
 temp12 = Template.create(content: "NOUN is mostly a superstition when VERBing. Life is either a(n) ADJECTIVE adventure or nothing. –Helen Keller", image_url: "https://images.pexels.com/photos/884788/pexels-photo-884788.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
 temp13 = Template.create(content: "The NOUN who has ADJECTIVE confidence in himself VERBs the confidence of others. –Hasidic Proverb", image_url: "https://images.pexels.com/photos/547114/pexels-photo-547114.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
 
+quote1 = temp13.quotes.create
+quote1.nouns.create(noun_word: "actor")
+quote1.verbs.create(verb_word: "hang")
+quote1.adjectives.create(adj_word: "adorable")
+
 # #Nouns
-# actor = Noun.create(noun_word: "actor")
+# actor = Noun.create(noun_word: "actor", quote_id: 1)
 # ghost = Noun.create(noun_word: "ghost")
 # gold = Noun.create(noun_word: "gold")	
 # painting = Noun.create(noun_word: "painting")
 # carpet = Noun.create(noun_word: "carpet")
 
 # #Verbs
-# hang = Verb.create(verb_word: "hang")
+# hang = Verb.create(verb_word: "hang", quote_id: 1)
 # knit = Verb.create(verb_word: "knit")
 # obey = Verb.create(verb_word: "obey")
 # scatter = Verb.create(verb_word: "scatter")
 # visit = Verb.create(verb_word: "visit")
 
 # #Adjectives
-# adorable = Adjective.create(adj_word: "adorable")
+# adorable = Adjective.create(adj_word: "adorable", quote_id: 1)
 # beautiful = Adjective.create(adj_word: "beautiful")
 # clean = Adjective.create(adj_word: "clean")
 # drab = Adjective.create(adj_word: "drab")
 # elegant = Adjective.create(adj_word: "elegant")
 
-# #Test Quote
-# Quote.create(noun_id: 1, verb_id: 1, adjective_id: 1, template_id: 1)
+# Test Quote
+# Quote.create(template_id: 1)
