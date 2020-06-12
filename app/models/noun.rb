@@ -1,3 +1,3 @@
 class Noun < ApplicationRecord
-    belongs_to :template
+    belongs_to :quote
 end
