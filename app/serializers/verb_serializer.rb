@@ -1,4 +1,4 @@
 class VerbSerializer < ActiveModel::Serializer
-    attributes :id, :verb_word, :template_id
-    belongs_to :template
+    attributes :id, :verb_word
+    belongs_to :quote
   end

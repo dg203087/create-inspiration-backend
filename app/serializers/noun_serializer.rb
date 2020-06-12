@@ -1,4 +1,4 @@
 class NounSerializer < ActiveModel::Serializer
-    attributes :id, :noun_word, :template_id
-    belongs_to :template
+    attributes :id, :noun_word
+    belongs_to :quote
   end

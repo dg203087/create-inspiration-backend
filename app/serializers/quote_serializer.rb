@@ -1,8 +1,8 @@
 class QuoteSerializer < ActiveModel::Serializer
-    # attributes :id, :final_quote
+    attributes :id
 
-    # belongs_to :adjective
-    # belongs_to :noun
-    # belongs_to :verb
+    has_many :adjectives
+    has_many :nouns
+    has_many :verbs
     # belongs_to :template
   end
