@@ -4,9 +4,19 @@ class Api::V1::TemplatesController < ApplicationController
         render json: templates
     end
 
-    def show
-        template = Template.find(params[:id])
-        render json: template
+    # def show
+    #     template = Template.find(params[:id])
+    #     render json: template
+    # end
+
+    def create
+        noun = Noun.new(noun_params)
+        
+        if noun.save
+            render json: noun, status: :accepted #ADD location: noun?
+        else
+            render json: {errors: noun.errors.full_messages}, status: :unprocessable_entity
+        end
     end
 
 end

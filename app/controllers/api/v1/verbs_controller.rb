@@ -5,7 +5,7 @@ class Api::V1::VerbsController < ApplicationController
     end
 
     def show
-        verb = Verb.find(params[:id])
+        verbs = Verb.find(params[:id])
         render json: verb
     end
 
@@ -22,6 +22,6 @@ class Api::V1::VerbsController < ApplicationController
   
     private
         def verb_params
-            params.require(:verb).permit(:verb_words)
+            params.require("verb").permit(:verb_word)
         end
 end

@@ -2,7 +2,7 @@ class Api::V1::QuotesController < ApplicationController
     
     # def quote_info
     #     info = {verbs: Verb.all, nouns: Noun.all, adjectives: Adjective.all, template: Template.all}
-    #     render json: info
+    #     render json: info 
     # end
 
     def index
@@ -10,13 +10,13 @@ class Api::V1::QuotesController < ApplicationController
         render json: quotes
     end
 
-    def show
-        quote = Quote.find(params[:id])
-        render json: quotes
-    end
+    # def show
+    #     quote = Quote.find(params[:id])
+    #     render json: quotes
+    # end
 
     def create
-        quote = Quote.new(adjective_id: params[:adjective_id], noun_id: params[:noun_id], verb_id: params[:verb_id], template_id: params[:template_id])
+        quote = Quote.new(quote_params)
 
         if quote.save
             render json: quote, status: :accepted 
@@ -28,7 +28,7 @@ class Api::V1::QuotesController < ApplicationController
   
     private
         def quote_params
-            params.require(:quote).permit(:adjective_id, :noun_id, :verb_id, :template_id)
+            params.require(:quote).permit(:template_id)
         end
 
 end
