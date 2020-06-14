@@ -11,7 +11,7 @@ class Api::V1::NounsController < ApplicationController
 
     def create
         noun = Noun.new(noun_params)
-    
+        
         if noun.save
             render json: noun, status: :accepted #ADD location: noun?
         else
@@ -21,6 +21,6 @@ class Api::V1::NounsController < ApplicationController
   
     private
         def noun_params
-            params.require("noun").permit(:noun_word)
+            params.require("noun").permit(:quote_id)
         end
 end

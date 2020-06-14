@@ -69,7 +69,7 @@ category has many syllabi
     - Build relevant routes for MVP (ex: `index` and `create`)
     - Visit `http://localhost:3000/api/v1/<your_resource_name>` to see JSON data
 
-- [ ] 3. Fast JSON API Serializer
+- [x] 3. Fast JSON API Serializer
     - Add `gem 'fast_jsonapi'` to your Rails project's Gemfile and run `bundle install`
     - Create Serializer classes
       - `rails g serializer <your_resource_name>`
@@ -102,8 +102,8 @@ category has many syllabi
         - To control the attributes displayed in the association view PART 2 notes on adding relationships
 
 
-- [ ] 4. **TEST:** Confirm data at your Rails endpoints! (ex: `http://seeda.com/api/v1/syllabuses`)
-- [ ] 5. Build out your associated models using this same process. **REMEMBER: Focus on building vertically for MVP** this means only starting with 2 or 3 models before moving on to the frontend.
+- [x] 4. **TEST:** Confirm data at your Rails endpoints! (ex: `http://seeda.com/api/v1/syllabuses`)
+- [x] 5. Build out your associated models using this same process. **REMEMBER: Focus on building vertically for MVP** this means only starting with 2 or 3 models before moving on to the frontend.
 
 
 ### PART 3: DOM Manipulation, Events, and Fetch using Rails API
@@ -114,24 +114,27 @@ category has many syllabi
 
 **Initial Setup**
 
-- [ ] 1. Create separate directory for frontend
-- [ ] 2. Create `index.html` file with script tag connecting your `index.js`. Ex: `<script type="text/javascript" src="index.js"></script>`
-- [ ] 3. Create `index.js`, `console.log("in index.js")`, and check for the logged message in your dev tools to confirm the `index.html` <> `index.js` connection was established.
-- [ ] 4. Initialize a `git` repo for frontend repository.
+- [x] 1. Create separate directory for frontend
+- [x] 2. Create `index.html` file with script tag connecting your `index.js`. Ex: `<script type="text/javascript" src="index.js"></script>`
+- [x] 3. Create `index.js`, `console.log("in index.js")`, and check for the logged message in your dev tools to confirm the `index.html` <> `index.js` connection was established.
+- [x] 4. Initialize a `git` repo for frontend repository.
 
 **Connect your API to your frontend!**
 
-- [ ] 5. Think about the **JS mantra** and answer this question: When the _DOM Content is Loaded_, I want to make a  _GET_ fetch and then manipulate the DOM _in what way_ (usually render the data)?
-- [ ] 6. Create `DOMContentLoaded` event listener and `console.log("loaded")` as the event handler to confirm we've properly set up the listener.
-- [ ] 7. We're eventually going to make a call to the `index` route of our API (ex: `localhost:3000/api/v1/syllabuses`). Run your `rails server` and visit that end point in the browser to confirm the expected JSON data is present.
-- [ ] 8. We can see the JSON data in the browser but in order to access it in our frontend, we'll need to setup Cross Origin Resource Sharing (CORS). In order to do this we'll need to do a couple things:
+- [x] 5. Think about the **JS mantra** and answer this question: When the _DOM Content is Loaded_, I want to make a  _GET_ fetch and then manipulate the DOM _in what way_ (usually render the data)? 
+LOAD with   - form to fill in 
+            - one random quote to fill in
+Manipulate  - change selected words 
+- [x] 6. Create `DOMContentLoaded` event listener and `console.log("loaded")` as the event handler to confirm we've properly set up the listener.
+- [x] 7. We're eventually going to make a call to the `index` route of our API (ex: `localhost:3000/api/v1/syllabuses`). Run your `rails server` and visit that end point in the browser to confirm the expected JSON data is present.
+- [x] 8. We can see the JSON data in the browser but in order to access it in our frontend, we'll need to setup Cross Origin Resource Sharing (CORS). In order to do this we'll need to do a couple things:
     - Navigate to your Gemfile and uncomment `gem 'rack-cors'` then `bundle install`. You can read more about CORS in the PART 3 notes and [here](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing).
     - Inside of `config/initializers/cors.rb` uncomment the CORS code and update `origins 'example.com'` to `origins '*'`
-- [ ] 9. Commit and push this code!
+- [x] 9. Commit and push this code!
 
 **Receive (GET) data _from_ the server**
 
-- [ ] 10. `GET` request
+- [x] 10. `GET` request
     - Create a new branch for `GET` implementation.
     - Create your `get____` function (ex: `function getToys()`) that will make a call to your `index` endPoint in your API, make your `GET` request inside the function and `console.log` the json data, then call your `get___` function in the `DOMContentLoaded` event listener.
     - Once you have confirmed your `GET` request is returning the `JSON` you were expecting, use that data to update the `DOM`.(see PART 3 notes for example)
@@ -139,7 +142,7 @@ category has many syllabi
 
 **Submit (POST) data _to_ the server**
 
-- [ ] 11. `POST` request
+- [x] 11. `POST` request
     - Create a new branch for `POST` implementation.
     - Create form
     - Create submit event listener
@@ -147,7 +150,7 @@ category has many syllabi
     - Create `post_____` function
     - Manipulate the DOM with "posted" JSON data
     - Once working: Commit and push this code! Then merge branch to master.
-- [ ] 12. `git pull` on the master branch to get working `GET` and `POST` functionality.
+- [x] 12. `git pull` on the master branch to get working `GET` and `POST` functionality.
 
 **Refactor to make your code more DRY**
 
@@ -163,14 +166,116 @@ category has many syllabi
 - [ ] 6. For future use, create a static method in your JS class that finds an object based on it's id. (In the PART 4 notes we see how this would be useful for 'update/`PATCH`' functionality)
 
 ### Bonus
-- [ ] Leverage a CSS framework to improve the styling of your application
+- [x] Leverage a CSS framework to improve the styling of your application
   - Easiest to implement: [Bulma](https://bulma.io/)
   - Most popular: [Bootstrap](https://getbootstrap.com/)
   - Also good: [Semantic UI](https://semantic-ui.com/)
   - Not bootstrap: [Materialize](https://materializecss.com/)
 
 ### Confirm
-- [ ] You have a large number of small Git commits
-- [ ] Your commit messages are meaningful
-- [ ] You made the changes in a commit that relate to the commit message
-- [ ] You don't include changes in a commit that aren't related to the commit message
+- [x] You have a large number of small Git commits
+- [x] Your commit messages are meaningful
+- [x] You made the changes in a commit that relate to the commit message
+- [x] You don't include changes in a commit that aren't related to the commit message
+
+
+// RENDER TEMPLATE REFACTOR 
+// function renderTemplate(template) {
+//     const currentTemplate = document.createElement('div')
+//     currentTemplate.classList += "template" 
+//     currentTemplate.dataset["id"] = template.id 
+
+//     document.querySelector('#template-container').innerHTML += currentTemplate
+
+//     form.innerHTML = replaceText(quote, data)
+//     formHandler(quote, templateId)
+// }
+
+
+// // POST NOUNS
+// function postNoun(noun, template) {
+//   const nounData = {noun: {noun_word: noun}} //build noun object
+
+//   fetch(nounsURL, {
+//     method: "POST",
+//     headers: {"Content-Type": "application/json"}, 
+//     body: JSON.stringify(nounData) // send data to API
+//   })
+//   .then(response => response.json())
+//   .then(noun => {
+//     // console.log(nounData)
+//     const currentNoun = `
+//         <div data-id=${noun.id}> 
+//           <div class="centered"><h3>${noun}</h3></div>
+//         </div>
+//         `
+//     document.querySelector('#test-container').innerHTML += currentNoun
+//   })
+// }
+
+// //POST VERBS
+// function postVerb(verb) {
+//   const verbData = {verb: {verb_word: verb}}
+
+//   fetch(verbsURL, {
+//     method: "POST",
+//     headers: {"Content-Type": "application/json"}, 
+//     body: JSON.stringify(verbData) // send data to API
+//   })
+//   .then(response => response.json())
+//   .then(verb => {
+//     console.log(verbData);
+
+//   })
+// }
+
+// //POST ADJECTIVES
+// function postAdjective(adjective) {
+//   const adjData = {adjective: {adj_word: adjective}}
+
+//   fetch(adjectivesURL, {
+//     method: "POST",
+//     headers: {"Content-Type": "application/json"}, 
+//     body: JSON.stringify(adjData) // send data to API
+//   })
+//   .then(response => response.json())
+//   .then(adjective => {
+//     console.log(adjData);
+//   })
+// }
+
+
+    // fetch(nounsURL, {
+    //   method: "POST",
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'Accept': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     noun: nounData,
+    //     quote: quoteData
+    //   })
+    // })
+    //   .then(response => response.json())
+    //   .then(updatedQuote => {
+    //     console.log(updatedQuote);
+    //   })
+
+
+    patch that never worked
+     // fetch(`${quotesURL}/${quoteID}`, {
+  //   method: "PATCH",
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //     'Accept': 'application/json',
+  //   },
+  //   body: JSON.stringify({
+  //     adjectives: adjData,
+  //     nouns: nounData,
+  //     verbs: verbData
+  //   })
+  // })
+  //   .then(response => response.json())
+  //   .then(updatedQuote => {
+  //     console.log(updatedQuote);
+  //   })

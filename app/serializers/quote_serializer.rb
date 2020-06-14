@@ -4,5 +4,5 @@ class QuoteSerializer < ActiveModel::Serializer
     has_many :adjectives
     has_many :nouns
     has_many :verbs
-    # belongs_to :template
+    belongs_to :template
   end

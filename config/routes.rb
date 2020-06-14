@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   
   namespace :api do
     namespace :v1 do
-      resources :adjectives, only: [:index, :create]
-      resources :nouns, only: [:index, :create]
-      resources :verbs, only: [:index, :create]
-      resources :templates, only: [:index, :create]
-      resources :quotes, only: [:index, :create]
+      resources :adjectives, only: [:index, :show, :create]
+      resources :nouns, only: [:index, :show, :create]
+      resources :verbs, only: [:index, :show, :create]
+      resources :templates, only: [:index, :show, :create]
+      resources :quotes, only: [:index, :show, :create, :update]
+      get '/all' => 'quotes#quote_info'
     end
   end
 
