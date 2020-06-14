@@ -1,24 +1,58 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h1>Make Inspiration App</h1>
 
-Things you may want to cover:
+Why depend on others for motivation? Create your own inspiration with this Javascript/Rails application. This app creates randomly generated, mad-lib style versions of famous quotes with the users help. 
 
-* Ruby version
+<h2>Getting Started</h2>
 
-* System dependencies
+To use the backend, clone this repository, run rake db:migrate, and then run the rails server in the terminal by typing rails s. 
 
-* Configuration
+Navigate to Rails frontend: https://github.com/dg203087/create-inspiration-frontend
 
-* Database creation
+Fork and clone the repository. 
 
-* Database initialization
+<h2>Prerequisites</h2>
 
-* How to run the test suite
+Before cloning the app, your terminal should be running Rails version 6.0.2 or higher as well as OmniAuth.
 
-* Services (job queues, cache servers, search engines, etc.)
+<h2>Installing</h2>
 
-* Deployment instructions
+Clone from GitHub
 
-* ...
+```sh
+$ git clone 
+$ cd https://github.com/dg203087/create-inspiration-backend
+$ bundle install
+```
+Run migrations:
+```sh
+$ rails db:migrate
+```
+Navigate to host: http://localhost:3000/ and run:
+```sh
+$ rails s
+```
+$ git clone 
+$ cd https://github.com/dg203087/create-inspiration-frontend
+$ open index.html
+
+<h2>Built With</h2>
+
+Ruby
+Rails API
+Post Gres SQL 
+Javascript
+
+<h2>Authors</h2>
+
+Deanna Kelley 
+
+<h2>License</h2>
+
+This project is licensed under the MIT License. 
+https://opensource.org/licenses/MIT 
+
+<h2>Acknowledgments</h2>
+
+* W3 Schools CSS was used extensively for template, formatting, and buttons. LINK: https://www.w3schools.com/w3css/tryw3css_templates_start_page.htm
