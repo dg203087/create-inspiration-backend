@@ -1,10 +1,5 @@
 class Api::V1::QuotesController < ApplicationController
     
-    # def quote_info
-    #     info = {verbs: Verb.all, nouns: Noun.all, adjectives: Adjective.all, template: Template.all}
-    #     render json: info 
-    # end
-
     def index
         quotes = Quote.all
         render json: quotes
@@ -27,7 +22,7 @@ class Api::V1::QuotesController < ApplicationController
 
     def update
         quote = Quote.find_by(id: params[:id])
-        byebug
+        
         quote.template.update(quote_params)
 
         if quote.save
@@ -39,11 +34,7 @@ class Api::V1::QuotesController < ApplicationController
   
     private
         def quote_params
-            params.require(:quote).permit(:template_id)
+            params.require(:quote).permit(:template_id, :adjectives, :nouns, :verbs,)
         end
-
-        # def quote_params
-        #     params.fetch(:quote, {}).permit(:adjectives, :nouns, :verbs, :template_id)
-        # end
 
 end
