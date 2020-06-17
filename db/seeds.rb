@@ -6,9 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Verb.destroy_all
-Noun.destroy_all
-Adjective.destroy_all
 Quote.destroy_all
 Template.destroy_all
 
@@ -28,31 +25,11 @@ temp11 = Template.create(content: "Whether you think you can or VERB ADJECTIVE, 
 temp12 = Template.create(content: "NOUN is mostly a superstition when VERBing. Life is either a(n) ADJECTIVE adventure or nothing. –Helen Keller", image_url: "https://images.pexels.com/photos/884788/pexels-photo-884788.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
 temp13 = Template.create(content: "The NOUN who has ADJECTIVE confidence in himself VERBs the confidence of others. –Hasidic Proverb", image_url: "https://images.pexels.com/photos/547114/pexels-photo-547114.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
 
-quote1 = temp13.quotes.create
-quote1.nouns.create(noun_word: "actor")
-quote1.verbs.create(verb_word: "hang")
-quote1.adjectives.create(adj_word: "adorable")
+#Quotes
+quote1 = Quote.create(adjective: "sweet", verb:"hang", noun: "actor", template_id: 1)
+quote2 = Quote.create(adjective: "beautiful", verb:"knit", noun: "ghost", template_id: 2)
+quote3 = Quote.create(adjective: "clean", verb:"see", noun: "gold", template_id: 2)
+quote4 = Quote.create(adjective: "elegant", verb:"scatter", noun: "painting", template_id: 3)
+quote5 = Quote.create(adjective: "ridiculous", verb:"visit", noun: "wall", template_id: 4)
 
-# #Nouns
-# actor = Noun.create(noun_word: "actor", quote_id: 1)
-# ghost = Noun.create(noun_word: "ghost")
-# gold = Noun.create(noun_word: "gold")	
-# painting = Noun.create(noun_word: "painting")
-# carpet = Noun.create(noun_word: "carpet")
 
-# #Verbs
-# hang = Verb.create(verb_word: "hang", quote_id: 1)
-# knit = Verb.create(verb_word: "knit")
-# obey = Verb.create(verb_word: "obey")
-# scatter = Verb.create(verb_word: "scatter")
-# visit = Verb.create(verb_word: "visit")
-
-# #Adjectives
-# adorable = Adjective.create(adj_word: "adorable", quote_id: 1)
-# beautiful = Adjective.create(adj_word: "beautiful")
-# clean = Adjective.create(adj_word: "clean")
-# drab = Adjective.create(adj_word: "drab")
-# elegant = Adjective.create(adj_word: "elegant")
-
-# Test Quote
-# Quote.create(template_id: 1)
