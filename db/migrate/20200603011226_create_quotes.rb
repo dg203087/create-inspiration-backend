@@ -5,7 +5,7 @@ class CreateQuotes < ActiveRecord::Migration[6.0]
       t.string :adjective
       t.string :noun
       t.string :verb
-      t.references :template_id
+      t.references :template
 
       t.timestamps
     end
